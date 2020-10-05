@@ -1,0 +1,31 @@
+
+How to run the sample project on "https://wiki.seeedstudio.com/SeeedStudio-GD32-RISC-V-Dev-Board/"
+under VSC/Platformio.
+I spent about 5 days and finally got it works. below is my steps.
+
+STEP 1.
+	on https://wiki.seeedstudio.com/SeeedStudio-GD32-RISC-V-Dev-Board/ 
+	download the example project file "TFT_GD32" to your project folder under platformio
+STEP 2.
+	rename the original package "framework-arduino-gd32v"(at youruserid/.platformio/packages/…) 
+	to some thing else, since it is not completed; 
+	download the new framework at https://github.com/LynnL4/framework-arduino-gd32v;
+	rename it to framework-arduino-gd32v and put it under youruserid/.platformio/packages/…;
+STEP 3. 
+	Build the TFT_GD32 project. and notice the firmware.hex is at \.pio\build\gd32vf103v-eval;
+
+STEP4
+	Hardware 
+	1. connect the LCD cable in this way the blue marks on both end must face up on both LCD board and Dev board. 
+	in this way the connector pin1 of LCD is connected to connector pin32 on the Dev board.
+	2. Set the jumpers (BOOT0 & BOOT1) like this,
+		for uploading/programming/Writing_to_board mode, set BOOT0 to 3V3 and BOOT1 to GND;
+		for Normal mode, set BOOT0 to GND and BOOT1 to GND; 
+STEP 5 
+	1. following https://wiki.seeedstudio.com/SeeedStudio-GD32-RISC-V-Dev-Board/
+	download the DFU tool;
+	2. set the jumper to uploading/programming/Writing_to_board mode(BOOT0 to 3V3 and BOOT1 to GND);
+	and plug the USB cable to your computer; 
+	3. program the firmware.hex to the board (there is some pics on wiki.seeedstudio.com/SeeedStudio-GD32-RISC-V-Dev-Board/)
+	4. reset the jumper to Normal mode(BOOT0 to GND and BOOT1 to GND). and plug the usb cable to computer. the show will begin. 
+
